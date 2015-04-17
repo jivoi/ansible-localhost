@@ -5,3 +5,5 @@
 - name: Install dropbox for Debian OS family
   apt: deb={{ dropbox_tmp_deb }}
 
+- name: Remove dropbox apt repositories
+  file: path=/etc/apt/sources.list.d/dropbox.list state=absent
