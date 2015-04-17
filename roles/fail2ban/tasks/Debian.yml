@@ -1,5 +1,5 @@
 - name: Install fail2ban
-  apt: pkg=fail2ban state=latest update_cache=yes
+  apt: pkg=fail2ban update_cache=no cache_valid_time=3600 state=latest
 
 - name: Copy fail2ban config
   shell: cp /etc/fail2ban/jail.conf /etc/fail2ban/jail.local
