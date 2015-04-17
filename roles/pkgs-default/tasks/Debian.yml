@@ -1,0 +1,55 @@
+---
+- name: Install default pkgs
+  apt: pkg={{ item }} update_cache=no cache_valid_time=3600 state=latest
+  with_items:
+    - virtualbox
+    - docker
+    - build-essential
+    - ipython
+    - ansible
+    - aptitude
+    - atop
+    - byobu
+    - chromium-browser
+    - clementine
+    - curl
+    - fail2ban
+    - fancontrol
+    - firefox
+    - flashplugin-installer
+    - gdebi
+    - gdebi-core
+    - git
+    - gsmartcontrol
+    - htop
+    - iftop
+    - keychain
+    - language-pack-ru
+    - linux-firmware-nonfree
+    - lm-sensors
+    - mc
+    - mosh
+    - nmap
+    - openssh-server
+    - p7zip-full
+    - pidgin
+    - preload
+    - rar
+    - rdesktop
+    - screen
+    - smartmontools
+    - software-properties-common
+    - python-software-properties
+    - subversion
+    - synaptic
+    - tmux
+    - transmission
+    - transmission-qt
+    - unrar
+    - vagrant
+    - vim
+    - vlc
+    - wget
+    - workrave
+    - xfonts-terminus
+    - zram-config

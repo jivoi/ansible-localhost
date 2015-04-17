@@ -1,0 +1,6 @@
+---
+- name: Add F.lux apt repository
+  apt_repository: repo='ppa:kilian/f.lux' state=present
+
+- name: Install latest F.lux via apt
+  apt: pkg=fluxgui state=latest update_cache=yes

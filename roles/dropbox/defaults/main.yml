@@ -1,0 +1,4 @@
+---
+# Package states: installed or latest
+dropbox_version: "1.6.2"
+dropbox_tmp_deb: "/tmp/dropbox_{{dropbox_version}}.deb"

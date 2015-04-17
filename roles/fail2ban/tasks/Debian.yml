@@ -1,0 +1,7 @@
+- name: Install fail2ban
+  apt: pkg=fail2ban state=latest update_cache=yes
+
+- name: Copy fail2ban config
+  shell: cp /etc/fail2ban/jail.conf /etc/fail2ban/jail.local
+
+#https://github.com/nickjj/ansible-fail2ban/

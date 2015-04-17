@@ -1,0 +1,17 @@
+---
+- name: Install kubuntu pkgs
+  apt: pkg={{ item }} update_cache=no cache_valid_time=3600 state=latest
+  with_items:
+    - redshift
+    - plasma-widget-redshift
+    - kde-wallpapers
+    - krusader
+    - kubuntu-restricted-extras
+    - language-pack-kde-ru
+    - libavcodec-extra
+    - software-properties-gtk
+    - ubuntu-restricted-extras
+    - evince 
+    - okular
+    - k3b
+    - libreoffice

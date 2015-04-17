@@ -1,0 +1,6 @@
+---
+- name: Download sublime text
+  get_url: url={{ sublimetext_url_deb }} dest={{sublimetext_tmp_deb}}
+
+- name: Install sublime text for Debian family OS
+  apt: deb={{sublimetext_tmp_deb}}

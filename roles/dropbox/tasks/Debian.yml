@@ -1,0 +1,7 @@
+---
+- name: Download dropbox
+  get_url: url={{ dropbox_url_ubuntu_deb }} dest={{ dropbox_tmp_deb }}
+
+- name: Install dropbox for Debian OS family
+  apt: deb={{ dropbox_tmp_deb }}
+

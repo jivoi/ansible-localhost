@@ -1,0 +1,10 @@
+---
+- name: Clone dotfiles
+  git: repo=https://github.com/{{ github_username }}/dotfiles.git dest=/home/{{ username }}/dotfiles force=yes
+
+- name: Change ownership of dotfiles
+  file: path=/home/{{ username }}/dotfiles recurse=yes state=directory owner={{ username }} group={{ username }} mode=0775
+
+- name: Run dotfiles bootstrap
+  shell: "/home/{{ username }}/dotfiles/bootstrap.sh"
+  sudo: no

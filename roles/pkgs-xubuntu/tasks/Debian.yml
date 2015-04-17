@@ -1,0 +1,12 @@
+---
+- name: Install xubuntu pkgs
+  apt: pkg={{ item }} update_cache=no cache_valid_time=3600 state=latest
+  with_items:
+    - leafpad
+    - libreoffice-gtk
+    - xubuntu-restricted-extras
+    - xubuntu-restricted-addons
+    - xubuntu-restricted-extras
+    - xubuntu-community-wallpapers
+    - xubuntu-wallpapers
+    - aisleriot
