@@ -1,24 +1,26 @@
 ---
-#gpg --keyserver keys.gnupg.net --recv 886DDD89
-#gpg --export A3C4F0F979CAA22CDBA8F512EE8CBC9E886DDD89 | sudo apt-key add -
-
-- name: register lsb release
+- name: Register lsb release
   command: lsb_release -cs
   register: lsb_release
+
+#gpg --keyserver keys.gnupg.net --recv 886DDD89
+#gpg --export A3C4F0F979CAA22CDBA8F512EE8CBC9E886DDD89 | sudo apt-key add -
+- name: Add torproject apt repository key
+  apt_key: id=886DDD89 keyserver=hkp://keys.gnupg.net:80 state=present
 
 - name: Install torproject apt signing gpg key
   apt_key: data="{{ lookup('file', 'torproject.gpg') }}" state=present
 
-- name: Add torproject to sources list
+- name: Add torproject apt repository
   apt_repository: repo='deb http://deb.torproject.org/torproject.org {{ lsb_release.stdout }} main' state=present update_cache=no
 
-- name: Install tor arm and keyring packages
+- name: Install tor packages
   apt: name="{{ item }}" state=latest
   with_items:
     - tor
     - tor-arm
     - deb.torproject.org-keyring
 
-#- name: configure tor
-#  template: > src=torrc.j2 dest=/etc/tor/torrc owner=root group=root mode=0644
-#  notify: restart tor
+- name: Configure tor
+  template: > src=torrc.j2 dest=/etc/tor/torrc owner=root group=root mode=0644
+  notify: restart tor
