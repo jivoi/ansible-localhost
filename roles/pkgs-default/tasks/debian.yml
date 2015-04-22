@@ -53,3 +53,5 @@
     - workrave
     - xfonts-terminus
     - zram-config
+    - emacs
+    - emacs-goodies-el
