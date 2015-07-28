@@ -1,6 +1,6 @@
 ---
 - name: Install default pkgs
-  apt: pkg={{ item }} update_cache=no cache_valid_time=3600 state=latest  
+  apt: pkg={{ item }} update_cache=no cache_valid_time=3600 state=latest
   with_items:
     - golang
     - virtualbox
@@ -14,7 +14,6 @@
     - chromium-browser
     - clementine
     - curl
-    - fail2ban
     - fancontrol
     - firefox
     - flashplugin-installer

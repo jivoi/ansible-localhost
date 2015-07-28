@@ -1,4 +1,4 @@
 ---
 # Package states: installed or latest
-dropbox_version: "1.6.2"
+dropbox_version: "2015.02.12"
 dropbox_tmp_deb: "/tmp/dropbox_{{dropbox_version}}.deb"
